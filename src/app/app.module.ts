@@ -5,16 +5,26 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/main/search/search.component';
 import { ArticlesComponent } from './components/main/articles/articles.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { CardComponent } from './components/main/articles/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
