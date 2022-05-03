@@ -7,9 +7,16 @@
   }
 
   .mat-form-field {
-    min-width: 600px;
+    width: 600px;
     min-height: 50px;
     margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .mat-form-field {
+    max-width: 400px;
+    min-width: 240px;
   }
 }
 

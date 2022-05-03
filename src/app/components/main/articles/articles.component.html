@@ -1,1 +1,37 @@
-<app-card></app-card>
+<div class="search">
+  <p class="search__filter">Filter by keywords</p>
+  <p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="The most successful IT companies in 2020" [(ngModel)]="searchStr">
+      <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">search</mat-icon>
+    </mat-form-field>
+  </p>
+</div>
+
+<p class="result">Results: {{ arts.length }}</p>
+<ul>
+  <li *ngFor="let card of arts | search:searchStr">
+    <!-- <app-card [card]="card"></app-card> -->
+
+    <mat-card class="card">
+      <img mat-card-image src="{{ card.imageUrl }}" alt="Photo of a Shiba Inu">
+      <mat-card-header>
+        <mat-card-subtitle class="card__subtitle">
+          <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">article</mat-icon>
+          {{ card.publishedAt | date }}
+        </mat-card-subtitle>
+        <mat-card-title class="card__title" [innerHTML]="card.title | slice:0:30 | highlight:searchStr">
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card__content" [innerHTML]="card.summary | slice:0:100 | highlight:searchStr">
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="card__button">Read more
+          <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">trending_flat</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </li>
+</ul>
