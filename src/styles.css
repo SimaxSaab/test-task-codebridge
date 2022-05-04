@@ -2,11 +2,10 @@
 
 html,
 body { 
-  /* height: 100%; */
   box-sizing: border-box;
 }
 
-body { margin: 0; font-family: Montserrat, sans-serif; color: #363636; font-weight: 400; }
+body { margin: 0; font-family: Montserrat, sans-serif!important; color: #363636; font-weight: 400; }
 
 * {
   margin: 0;

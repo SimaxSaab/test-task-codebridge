@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
+import { ArticleComponent } from './components/article/article.component';
+import { MainComponent } from './components/main/main.component';
+
+const routes = [
+  { path: '', component: MainComponent },
+  { path: 'article/:articleId', component: ArticleComponent}
+];
 
 @NgModule({
   declarations: [
@@ -27,10 +35,13 @@ import { metaReducers, reducers } from './reducers';
     ArticlesComponent,
     CardComponent,
     SearchPipe,
-    HighlightPipe
+    HighlightPipe,
+    MainComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,

@@ -1,22 +1,20 @@
 <mat-card class="card">
-  <img mat-card-image src="{{ card.imageUrl}}" alt="Photo of a Shiba Inu">
+  <img mat-card-image src="{{ card.imageUrl }}" alt="Photo of a news">
   <mat-card-header>
     <mat-card-subtitle class="card__subtitle">
       <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">article</mat-icon>
-      {{ getDate() }}
+      {{ card.publishedAt | date }}
     </mat-card-subtitle>
-    <mat-card-title class="card__title">{{ card.title | slice:0:30 }}
-      <!-- The 2020 World's Most Valuable Brands -->
+    <mat-card-title class="card__title" [innerHTML]="card.title | slice:0:30 | highlight:search">
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p class="card__content">
-      {{ card.summary | slice:0:100 }}
+    <p class="card__content" [innerHTML]="card.summary | slice:0:100 | highlight:search">
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button class="card__button">Read more
-      <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">trending_flat</mat-icon>
+    <button [routerLink]="['article', card.id]" mat-button class="card__button">Read more
+      <mat-icon aria-hidden="false" aria-label="Search icon">trending_flat</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>

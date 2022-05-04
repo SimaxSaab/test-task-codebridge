@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { Store } from '@ngrx/store';
+import { searchSelector} from 'src/app/reducers/search';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -9,13 +12,13 @@ export class CardComponent implements OnInit {
 
   @Input() card!: any;
 
-  constructor() { }
+  public search!: string; 
+
+  search$ = this.store.select(searchSelector).subscribe((str: string) => this.search = str);
+
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
-  }
-
-  getDate() {
-    return new Date(this.card.publishedAt).toDateString();
   }
 
 }

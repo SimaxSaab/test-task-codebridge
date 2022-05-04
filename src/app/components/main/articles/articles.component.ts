@@ -13,9 +13,12 @@ import { searchSelector} from 'src/app/reducers/search';
 export class ArticlesComponent implements OnInit {
 
   // public searchStr!: string; 
-  public search!: string; 
+  public searchS!: string; 
 
-  search$ = this.store.select(searchSelector).subscribe((str: string) => this.search = str);
+  search$ = this.store.select(searchSelector).subscribe((str: string) => {
+    this.searchS = str;
+    console.log(this.searchS);
+  });
 
   public arts: any;
   private _articlesService: any;

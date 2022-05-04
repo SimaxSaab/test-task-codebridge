@@ -11,6 +11,10 @@ export class ArticlesService {
   constructor(private _http: HttpClient) { }
 
   getAll() {
-    return this._http.get('https://api.spaceflightnewsapi.net/v3/articles')
+    return this._http.get('https://api.spaceflightnewsapi.net/v3/articles');
+  }
+
+  getById(id: number) {
+    return this._http.get(`https://api.spaceflightnewsapi.net/v3/articles/${id}`);
   }
 }
