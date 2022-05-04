@@ -2,8 +2,10 @@
   <p class="search__filter">Filter by keywords</p>
   <p>
     <mat-form-field appearance="outline">
-      <input matInput placeholder="The most successful IT companies in 2020" [(ngModel)]="searchStr" (ngModelChange)="search()">
+      <input matInput [placeholder]="toggleText" [(ngModel)]="searchStr" (ngModelChange)="search()" id="search">
       <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">search</mat-icon>
     </mat-form-field>
   </p>
+  <button mat-button (click)="toogleSearch=!toogleSearch; toggle()">{{ buttonText }}
+  </button>
 </div>
