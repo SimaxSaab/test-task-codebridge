@@ -15,6 +15,11 @@ import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './pipes/highlight.pipe';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers, reducers } from './reducers';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,11 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     MatInputModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent]

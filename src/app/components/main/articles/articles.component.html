@@ -1,4 +1,4 @@
-<div class="search">
+<!-- <div class="search">
   <p class="search__filter">Filter by keywords</p>
   <p>
     <mat-form-field appearance="outline">
@@ -6,11 +6,11 @@
       <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">search</mat-icon>
     </mat-form-field>
   </p>
-</div>
+</div> -->
 
-<p class="result">Results: {{ arts.length }}</p>
+<p class="result">Results: {{ ((arts | search:search) || 1).length }}</p>
 <ul>
-  <li *ngFor="let card of arts | search:searchStr">
+  <li *ngFor="let card of arts | search:search">
     <!-- <app-card [card]="card"></app-card> -->
 
     <mat-card class="card">
@@ -20,11 +20,11 @@
           <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">article</mat-icon>
           {{ card.publishedAt | date }}
         </mat-card-subtitle>
-        <mat-card-title class="card__title" [innerHTML]="card.title | slice:0:30 | highlight:searchStr">
+        <mat-card-title class="card__title" [innerHTML]="card.title | slice:0:30 | highlight:search">
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="card__content" [innerHTML]="card.summary | slice:0:100 | highlight:searchStr">
+        <p class="card__content" [innerHTML]="card.summary | slice:0:100 | highlight:search">
         </p>
       </mat-card-content>
       <mat-card-actions>
