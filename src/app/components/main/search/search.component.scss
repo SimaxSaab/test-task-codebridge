@@ -11,6 +11,11 @@
     min-height: 50px;
     margin-top: 10px;
   }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 620px) {

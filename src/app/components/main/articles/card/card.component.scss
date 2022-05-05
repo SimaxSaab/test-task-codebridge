@@ -22,5 +22,11 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
+    transition: 1s all;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #aaa;
+    }
   }
 }
