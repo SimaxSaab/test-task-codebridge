@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { searchSelector} from 'src/app/reducers/search';
+import { searchSelector} from '../../../../reducers/search';
 
 @Component({
   selector: 'app-card',

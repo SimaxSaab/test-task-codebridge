@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './pipes/highlight.pipe';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { ArticleComponent } from './components/article/article.component';

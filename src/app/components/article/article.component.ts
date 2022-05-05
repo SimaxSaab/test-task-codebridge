@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticlesService } from '../../services/articles.service';
 
 import { Store } from '@ngrx/store';
-import { searchSelector} from 'src/app/reducers/search';
+import { searchSelector} from '../../reducers/search';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticlesService } from '../../../services/articles.service';
 
 import { Store } from '@ngrx/store';
-import { searchSelector} from 'src/app/reducers/search';
+import { searchSelector} from '../../../reducers/search';
 
 @Component({
   selector: 'app-articles',
@@ -12,7 +12,6 @@ import { searchSelector} from 'src/app/reducers/search';
 })
 export class ArticlesComponent implements OnInit {
 
-  // public searchStr!: string; 
   public searchS!: string; 
 
   search$ = this.store.select(searchSelector).subscribe((str: string) => {

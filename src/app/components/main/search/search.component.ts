@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { search } from 'src/app/reducers/search';
+import { search } from '../../../reducers/search';
 
 import { fromEvent, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
