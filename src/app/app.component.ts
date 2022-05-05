@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
       }, 15000)
     });
     this.sub = stream$.subscribe((value: any) => {
-      console.log(value);
       this.popup = value;
     });
     this.popup = true;

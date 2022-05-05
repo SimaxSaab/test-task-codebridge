@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this._articlesService.getById(this.articleId).subscribe((article: any) => {
       this.article = article;
-      console.log(this.article);});
+    });
   }
 
 }

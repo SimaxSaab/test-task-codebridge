@@ -16,7 +16,6 @@ export class ArticlesComponent implements OnInit {
 
   search$ = this.store.select(searchSelector).subscribe((str: string) => {
     this.searchS = str;
-    console.log(this.searchS);
   });
 
   public arts: any;
@@ -29,6 +28,6 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this._articlesService.getAll().subscribe((arts: any) => {
       this.arts = arts;
-      console.log(this.arts);});
+    });
   }
 }

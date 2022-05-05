@@ -4,15 +4,15 @@
     <mat-card-header>
       <mat-card-subtitle class="card__subtitle">
         <mat-icon matPrefix aria-hidden="false" aria-label="Search icon">article</mat-icon>
-        {{ (article || 1).publishedAt | date }}
+        {{ article.publishedAt | date }}
       </mat-card-subtitle>
       <mat-card-title class="card__title">
-        {{ (article || 1).title }}
+        {{ article.title }}
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p class="card__content">
-        {{ (article || 1).summary }}
+        {{ article.summary }}
       </p>
     </mat-card-content>
     <mat-card-actions>
